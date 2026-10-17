@@ -1,0 +1,37 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<int> sides) {
+    int answer = 0;
+    int a = sides[0];
+    int b = sides[1];
+    int c = sides[2];
+    
+    if (a >= b && a >= c) {
+        if (b + c > a) {
+            answer = 1;
+        }
+        else {
+            answer = 2;
+        }
+    }
+    else if (b >= a && b >= c) {
+        if (a + c > b) {
+            answer = 1;
+        }
+        else {
+            answer = 2;
+        }
+    }
+    else if (c >= a && c >= b) {
+        if (a + b > c) {
+            answer = 1;
+        }
+        else {
+            answer = 2;
+        }
+    }
+    return answer;
+}
